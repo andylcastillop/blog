@@ -11,6 +11,7 @@
 
 @include('admin.template.partials.nav') <br>
 @include('flash::message')
+@include('admin.template.partials.errors')
 @include('admin.template.partials.card')
 
 <script src="{{ asset('plugins/bootstrap/jquery/js/jquery-3.5.1.slim.js') }}"></script>

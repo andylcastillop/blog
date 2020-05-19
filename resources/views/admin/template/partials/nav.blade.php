@@ -13,7 +13,7 @@
         <a class="nav-link" href="{{ route('users.index') }}">Usuarios</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Categorías</a>
+        <a class="nav-link" href="{{ route('categories.index') }}">Categorías</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Artículos</a>

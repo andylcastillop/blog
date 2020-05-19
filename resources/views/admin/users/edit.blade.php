@@ -3,6 +3,7 @@
 @section('title', 'Editar Usuario ' . $user->name)
 
 @section('content')
+
     {!! Form::open(['route' => ['users.update', $user], 'method' => 'PUT']) !!}
         <div class="form-group">
             {!! Form::label('name', 'Nombre') !!}
@@ -18,7 +19,7 @@
         </div>-->
         <div class="form-group">
             {!! Form::label('type', 'Tipo') !!}
-            {!! Form::select('select', ['admin' => 'Administrador', 'member' => 'Miembro'], null,  ['class' => 'form-control']) !!}
+            {!! Form::select('type', ['admin' => 'Administrador', 'member' => 'Miembro'], null,  ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::submit('Editar', ['class' => 'btn btn-primary']) !!}
