@@ -30,3 +30,6 @@ Route::group(['prefix' => 'admin'], function(){
         'as'   => 'categories.destroy'
     ]);
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
