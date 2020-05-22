@@ -66,4 +66,8 @@ class UsersController extends Controller
         flash('Usuario '.$user->name . ' eliminado con éxito')->error()->important();
         return redirect()->route('users.index');
     }
+    public function __construct()
+{
+    $this->middleware('auth');
+}
 }

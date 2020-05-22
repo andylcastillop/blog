@@ -61,4 +61,8 @@ class CategoriesController extends Controller
         flash('Categoría '.$category->name . ' eliminada con éxito')->error()->important();
         return redirect()->route('categories.index');
     }
+    public function __construct()
+{
+    $this->middleware('auth');
+}
 }
