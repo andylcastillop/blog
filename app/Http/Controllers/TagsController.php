@@ -61,8 +61,9 @@ class TagsController extends Controller
         flash('Tag '.$tag->name . ' eliminado con éxito')->error()->important();
         return redirect()->route('tags.index');
     }
+
     public function __construct()
-{
-    $this->middleware('auth');
-}
+    {
+        $this->middleware('auth');
+    }
 }
