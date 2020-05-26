@@ -23,7 +23,7 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name'      => 'required|min:4|max:25|unique:categories',
+            'name'      => 'required|min:1|max:25|unique:categories',
         ]);
 
         $category = new Category($request->all());
@@ -43,7 +43,7 @@ class CategoriesController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'name'      => 'required|min:4|max:25',
+            'name'      => 'required|min:1|max:25',
         ]);
 
         $category = Category::find($id);

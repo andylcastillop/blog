@@ -17,7 +17,7 @@ class ArticlesController extends Controller
     {
         $tags = Tag::orderBy('name', 'ASC')->get();
         $categories = Category::orderBy('name', 'ASC')->get();
-        return view('admin.articles.create')->with('categories', $categories);
+        return view('admin.articles.create')->with('categories', $categories)->with('tags', $tags);
     }
 
     public function store(Request $request)

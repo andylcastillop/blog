@@ -4,7 +4,7 @@
 
 @section('content')
 
-    {!! Form::open(['route' => 'tags.store', 'method' => 'POST']) !!}
+    {!! Form::open(['route' => 'articles.store', 'method' => 'POST']) !!}
         <div class="form-group">
             {!! Form::label('name', 'Nombre') !!}
             {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre del Tag', 'required']) !!}

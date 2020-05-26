@@ -3,7 +3,7 @@
 @section('title', 'Listado de Tags')
 
 @section('content')
-    <a href="{{ route('tags.index') }}" class="btn btn-info pull-left">Registrar nuevo Tag</a>
+    <a href="{{ route('tags.create') }}" class="btn btn-info pull-left">Registrar nuevo Tag</a>
     {!! Form::open(['route' => 'tags.store', 'method' => 'GET', 'class' => 'navbar-form pull-right']) !!}
     <div class="input-group">
         {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Buscar Tag', 'aria-describedby' => 'search']) !!}
