@@ -11,7 +11,7 @@
         </div>
         <div class="form-group">
             {!! Form::label('category_id', 'Categoría') !!}
-            {!! Form::select('category_id', $categories, null, ['class' => 'form-control', 'placeholder' => 'Seleccione una opción', 'required']) !!}
+            {!! Form::select('category_id', $categories, null, ['class' => 'form-control select-category', 'placeholder' => 'Seleccione una opción', 'required']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('content', 'Contenido') !!}
@@ -19,7 +19,7 @@
         </div>
         <div class="form-group">
             {!! Form::label('tags', 'Tags') !!}
-            {!! Form::select('tags[]', $tags, null, ['class' => 'form-control', 'multiple', 'required']) !!}
+            {!! Form::select('tags[]', $tags, null, ['class' => 'form-control select-tag', 'multiple', 'required']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('image', 'Imagen') !!}
@@ -30,4 +30,20 @@
             {!! Form::submit('Registrar', ['class' => 'btn btn-primary']) !!}
         </div>
     {!!  Form::close() !!}
+    
 @endsection
+
+@section('js')
+    <script>
+        $('.select-tag').chosen({
+            placeholder_text_multiple: 'Seleccione un máximo de 5 tags',
+            max_selected_options: 5,
+            no_results_text: 'No hay resultados'
+        });
+
+        $('.select-category').chosen({
+            allow_single_deselect: true
+        });
+    </script>
+@endsection
+
