@@ -63,17 +63,31 @@ class ArticlesController extends Controller
 
     public function edit($id)
     {
-        //
+        $article = Article::find($id);
+        $categories = Category::orderBy('name', 'DESC')->pluck('name', 'id');
+        $tags = Tag::orderBy('name', 'DESC')->pluck('name', 'id');
+        return view ('admin.articles.edit')->with('categories', $categories)->with('article', $article)->with('tags', $tags);
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $article = Article::find($id);
+        $article->fill($request->all());
+        $article->save();
+
+        $article->tags()->sync($request->tags);
+
+        flash('Actualización exitosa del artículo '.$article->title)->warning()->important();
+
+        return redirect()->route('articles.index');
     }
 
     public function destroy($id)
     {
-        //
+        $article = Article::find($id);
+        $article->delete();
+        flash('Artículo '. $article->title . ' eliminado con éxito')->error()->important();
+        return redirect()->route('articles.index');
     }
 
     public function __construct()
