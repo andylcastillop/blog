@@ -26,6 +26,13 @@ class ArticlesController extends Controller
     public function store(Request $request)
     {
         //Manipulación de imágenes
+
+        $validatedData = $request->validate([
+            'title'         =>  'required|min:8|max:250|unique:articles',
+            'category_id'   =>  'required',
+            'content'       =>  'min:60|required',
+            'image'         =>  'required'
+        ]);
         
         if ($request->file('image')) {
             $file = $request ->file('image');

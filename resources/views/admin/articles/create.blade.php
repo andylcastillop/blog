@@ -15,7 +15,7 @@
         </div>
         <div class="form-group">
             {!! Form::label('content', 'Contenido') !!}
-            {!! Form::textarea('content', null, ['class' => 'form-control', 'placeholder' => 'Información del artículo', 'required']) !!}
+            {!! Form::textarea('content', null, ['class' => 'form-control textarea-content', 'placeholder' => 'Información del artículo', 'required']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('tags', 'Tags') !!}
@@ -44,6 +44,8 @@
         $('.select-category').chosen({
             allow_single_deselect: true
         });
+
+        $('.textarea-content').trumbowyg();
     </script>
 @endsection
 
