@@ -41,7 +41,13 @@ Route::group(['prefix' => 'admin'], function(){
         'uses' => 'ArticlesController@destroy',
         'as'   => 'articles.destroy'
     ]);
+
+    Route::get('images', [
+        'uses'  =>  'ImagesController@index',
+        'as'    => 'images.index'
+    ]);
 });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

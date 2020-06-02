@@ -36,11 +36,11 @@ class ArticlesController extends Controller
             'title'         =>  'required|min:8|max:250|unique:articles',
             'category_id'   =>  'required',
             'content'       =>  'min:60|required',
-            'image'         =>  'required'
+            'image'         =>  'image|required'
         ]);
         
         if ($request->file('image')) {
-            $file = $request ->file('image');
+            $file = $request->file('image');
             $name = 'innovbec_' . time() . '.' . $file->getClientOriginalExtension();
             $path = public_path() . '/img/articles/';
             $file->move($path, $name);
